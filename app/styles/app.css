@@ -1,0 +1,9 @@
+body {
+	padding-top: 100px;
+}
+.navbar {
+	padding: 15px 0;
+}
+.navbar.shrink {
+	padding: 0;
+}

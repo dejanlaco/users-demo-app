@@ -18,7 +18,8 @@
     "bootstrap": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
     "ember-ajax": "^3.0.0",
-    "ember-bootstrap": "^1.0.0-beta.1",
+    "ember-bootstrap": "^1.0.0-alpha",
+    "ember-bootstrap-validations": "^1.0.0-alpha",
     "ember-cli": "2.13.2",
     "ember-cli-app-version": "^3.0.0",
     "ember-cli-babel": "^6.0.0",
@@ -37,6 +38,7 @@
     "ember-localstorage-adapter": "^1.0.0",
     "ember-resolver": "^4.0.0",
     "ember-source": "~2.13.0",
+    "ember-validations": "^2.0.0-alpha.5",
     "ember-welcome-page": "^3.0.0",
     "loader.js": "^4.2.3"
   },

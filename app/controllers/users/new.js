@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-	user: {},
+	model: {},
 	actions: {
 		save: function() {
-			let user = this.get('user');
+			let user = this.get('model');
 			let model = this.store.createRecord('user', {
 				fname: user.fname,
 				lname: user.lname,
@@ -13,7 +13,7 @@ export default Ember.Controller.extend({
 			});
 			model.save().then(()=>{
 				this.transitionToRoute('users');
-				this.set('user',{});
+				this.set('model',{});
 			});
 		}
 	}

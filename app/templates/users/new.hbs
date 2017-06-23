@@ -4,24 +4,10 @@
 	<h2>Add user</h2>
 </div>
 
-<form>
-	<div class="form-group">
-		<label for="fname">First name</label>
-		{{input value=user.fname id="fname" class="form-control" placeholder="First name"}}
-	</div>
-	<div class="form-group">
-		<label for="lname">Last name</label>
-		{{input value=user.lname id="lname" class="form-control" placeholder="Last name"}}
-	</div>
-	<div class="form-group">
-		<label for="email">Email</label>
-		{{input value=user.email id="email" class="form-control" placeholder="Email"}}
-	</div>
-	<div class="form-group">
-		<label for="points">Points</label>
-		{{input value=user.points id="points" class="form-control" placeholder="Points"}}
-	</div>
-
-	<button {{action 'save'}} class="btn btn-default">Save user</button>
-
-</form>
+{{#bs-form model=model onSubmit=(action 'save') as |form|}}
+	{{form.element label="First name" controlType="text" property="fname"}}
+	{{form.element label="Last name" controlType="text" property="lname"}}
+	{{form.element label="Email" controlType="email" property="email"}}
+	{{form.element label="Points" controlType="points" property="points" required=true}}
+	{{bs-button defaultText="Submit" type="default" buttonType="submit"}}
+{{/bs-form}}

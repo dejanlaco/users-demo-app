@@ -17,22 +17,4 @@ export default Ember.Controller.extend({
 			});
 		}
 	}
-	//info: {},
-	//actions: {
-	//	newUser: function(model) {
-	//		//let inf = this.get('info');
-	//		let newuser = this.store.createRecord('user',{
-	//			fname: 'test'
-	//		});
-
-	//		newuser.save().then(()=>{
-	//			this.transitionToRoute('application');
-	//		},()=> {
-	//			console.log('failed');
-	//		});
-	//	},
-	//	cancel() {
-	//		return true;
-	//	}
-	//}
 });

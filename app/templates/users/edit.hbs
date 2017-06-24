@@ -2,10 +2,7 @@
 	<h2>Edit user: {{model.fname}} {{model.lname}}</h2>
 </div>
 
-{{#bs-form model=model onSubmit=(action 'save' model) novalidate=true as |form|}}
-	{{form.element label="First name" controlType="text" property="fname"}}
-	{{form.element label="Last name" controlType="text" property="lname"}}
-	{{form.element label="Email" controlType="email" property="email"}}
-	{{form.element label="Points" controlType="points" property="points" required=true}}
-	{{bs-button defaultText="Submit" type="default" buttonType="submit"}}
-{{/bs-form}}
+<form>
+	{{edit-fields model=model showErrors=showErrors errors=errors}}
+	<button {{action 'save' model}} class="btn btn-default">Save</button>
+</form>

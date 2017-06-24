@@ -1,20 +1,21 @@
 import Ember from 'ember';
+import PostValidations from 'users-demo-app/mixins/validations/user';
 
-export default Ember.Controller.extend({
-	model: {},
+export default Ember.Controller.extend(PostValidations, {
+	showErrors: false,
 	actions: {
 		save: function() {
-			let user = this.get('model');
-			let model = this.store.createRecord('user', {
-				fname: user.fname,
-				lname: user.lname,
-				email: user.email,
-				points: user.points
+
+			var post = this.store.createRecord('user', this.get('model'));
+
+			this.validate().then(()=>{
+				post.save().then(()=>{
+					this.transitionToRoute('users');
+				});
+			}).catch(()=>{
+				this.set('showErrors', true);
 			});
-			model.save().then(()=>{
-				this.transitionToRoute('users');
-				this.set('model',{});
-			});
+
 		}
 	}
 });

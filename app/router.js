@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('users', function() {
     this.route('show', { path: '/:user_id' });
     this.route('new');
-    this.route('edit', { path: '/edit/:edit_id' });
+    this.route('edit', { path: '/edit/:user_id' });
   });
   this.route('about');
   this.route('contact');

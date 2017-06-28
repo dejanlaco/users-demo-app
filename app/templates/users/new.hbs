@@ -1,10 +1,7 @@
-{{outlet}}
-
 <div class="page-header">
 	<h2>Add user</h2>
 </div>
 
 <form>
-	{{edit-fields model=model showErrors=showErrors errors=errors}}
-	<button {{action 'save'}} class="btn btn-default">Save</button>
+	{{edit-fields changeset=model save=(action 'save') showErrors=showErrors errors=errors}}
 </form>

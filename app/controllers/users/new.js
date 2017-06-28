@@ -5,10 +5,8 @@ export default Ember.Controller.extend(PostValidations, {
 	showErrors: false,
 	actions: {
 		save: function() {
-
-			var post = this.store.createRecord('user', this.get('model'));
-
 			this.validate().then(()=>{
+				var post = this.store.createRecord('user', this.get('model'));				
 				post.save().then(()=>{
 					this.transitionToRoute('users');
 				});

@@ -3,6 +3,5 @@
 </div>
 
 <form>
-	{{edit-fields model=model showErrors=showErrors errors=errors}}
-	<button {{action 'save' model}} class="btn btn-default">Save</button>
+	{{edit-fields changeset=(changeset model UserValidations) save=(action "save")}}
 </form>

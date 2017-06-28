@@ -1,18 +1,17 @@
 import Ember from 'ember';
-import PostValidations from 'users-demo-app/mixins/validations/user';
+import UserValidations from '../../validations/user';
 
-export default Ember.Controller.extend(PostValidations, {
-	showErrors: true,
+export default Ember.Controller.extend( {
+	UserValidations,
 	actions: {
-		save: function(model) {
-			this.validate().then(()=>{			
-
-				model.save();
-				this.transitionToRoute('users');
-				
-			}).catch(()=>{
-
+		save(changeset){
+			changeset.validate().then(()=>{
+				if(changeset.get("isValid")){
+					changeset.save().then(()=>{
+						this.transitionToRoute('users');
+					})
+				}
 			})
 		}
-	}	
+	}
 });
